@@ -1,0 +1,22 @@
+Sub send_single_email_with_chosen_attachment()
+'Must add references (Tools > References) to
+' 1) OLE Automation
+' 2) Microsoft Outlook xx.0 Object Library
+Dim outlookApp As Outlook.Application
+Dim myMail As Outlook.MailItem
+Dim Source_File As String
+
+Set outlookApp = New Outlook.Application
+Set myMail = outlookApp.CreateItem(olMailItem)
+
+myMail.To = "ryan.wellsr@gmail.com"
+myMail.Subject = "Check Out my File!"
+'myMail.HTMLBody = "<b>This is bold</b><br> and this isn't" 'uncomment this if you want a formatted body
+
+Source_File = Application.GetOpenFilename
+myMail.Attachments.Add Source_File
+
+myMail.Display True 'comment this out if you don't want to display email
+myMail.send 'comment this out if you don't want to send yet
+
+End Sub

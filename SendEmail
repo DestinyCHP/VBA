@@ -9,7 +9,7 @@ Dim Source_File As String
 Set outlookApp = New Outlook.Application
 Set myMail = outlookApp.CreateItem(olMailItem)
 
-myMail.To = "ryan.wellsr@gmail.com"
+myMail.To = "Destiny.Chen@hotmail.com"
 myMail.Subject = "Check Out my File!"
 'myMail.HTMLBody = "<b>This is bold</b><br> and this isn't" 'uncomment this if you want a formatted body
 
